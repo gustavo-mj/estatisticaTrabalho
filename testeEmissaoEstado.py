@@ -7,11 +7,16 @@ df = df.drop(columns=['Gás', 'Nível 1 - Setor'])
 
 dfAgrupado = df.groupby('Estado').sum()
 
+print(dfAgrupado)
+
 dfAgrupado['Emissão Total'] = dfAgrupado.sum(axis=1)
 
-df_result = dfAgrupado[['Emissão Total']].reset_index()
 
-print(df_result.describe())
+df_result = df[['Emissão Total']].reset_index()
+
+print(df_result)
+
+#print(df_result.describe())
 
 #plt.bar(df_result['Estado'], df_result['Emissão Total'])
 
